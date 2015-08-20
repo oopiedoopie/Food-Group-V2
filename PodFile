@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Alamofire', '~> 1.3'
+pod 'APAddressBook'
+pod 'DRCellSlideGestureRecognizer'
+pod "EGFloatingTextField"
+pod 'FontAwesome.swift'
+pod 'ParseFacebookUtilsV4'
+pod 'SVProgressHUD'
+pod 'GoogleMaps'
+pod 'Google-Mobile-Ads-SDK'
+pod 'PNChart'
