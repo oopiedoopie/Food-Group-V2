@@ -27,6 +27,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager?.distanceFilter = kCLDistanceFilterNone
             locationManager?.startUpdatingLocation()
+            //hardcoded lat lon for my apartment
             southwest = CLLocationCoordinate2DMake(34.712828, -82.197865)
             northeast = CLLocationCoordinate2DMake(34.854390, -82.444470)
         }else{
