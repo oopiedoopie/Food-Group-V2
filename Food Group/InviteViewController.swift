@@ -22,10 +22,12 @@ import PureLayout
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventTitleTextField.delegate = self
         eventTitleTextField.floatingLabel = true
         eventTitleTextField.setPlaceHolder("Event title here")
         eventTitleTextField.borderStyle=UITextBorderStyle.None
         self.view.addSubview(eventTitleTextField)
+        searchBar.returnKeyType = .Next
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -44,9 +46,6 @@ import PureLayout
         searchBar.text = ""
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        println(searchBar.text)
-    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
@@ -55,16 +54,25 @@ import PureLayout
     }
     
   
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        super.touchesBegan(touches, withEvent: event)
+        self.view.endEditing(true)
+        self.eventTitleTextField.endEditing(true)
+        
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         eventTitleTextField.resignFirstResponder()
-        return true
+        return true;
     }
     
     @IBAction func inviteButtonPressed(sender: AnyObject) {
         
     }
     
+   
+   
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSearch"

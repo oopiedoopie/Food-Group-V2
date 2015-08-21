@@ -21,12 +21,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if let promt = searchInviteesList[0] as String{
-//           nameLabel.text = "(promt), pick a place!"
-//        }else{
-//            nameLabel.text = "Pick a place!"
-//        }
-          if CLLocationManager.locationServicesEnabled() {
+        if(searchInviteesList?.count > 0){
+            nameLabel.text = "\(self.searchInviteesList![0]), it's your turn to pick a place!"
+        }
+        
+        if CLLocationManager.locationServicesEnabled() {
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager?.distanceFilter = kCLDistanceFilterNone
             locationManager?.startUpdatingLocation()
@@ -37,6 +36,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
         }
       }
    
+    
+    func nextVote(){
+        
+    }
+    
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
