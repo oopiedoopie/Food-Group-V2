@@ -25,7 +25,8 @@ import PureLayout
         eventTitleTextField.delegate = self
         eventTitleTextField.floatingLabel = true
         eventTitleTextField.setPlaceHolder("Event title here")
-        eventTitleTextField.borderStyle=UITextBorderStyle.None
+        eventTitleTextField.borderStyle = UITextBorderStyle.None
+        eventTitleTextField.textColor = UIColor.blackColor()
         self.view.addSubview(eventTitleTextField)
         searchBar.returnKeyType = .Next
     }
