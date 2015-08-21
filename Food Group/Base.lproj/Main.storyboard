@@ -372,12 +372,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCu-kj-7q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="82Z-za-uND">
-                    <connections>
-                        <outlet property="searchBar" destination="14f-oj-974" id="aac-al-8P4"/>
-                        <outlet property="searchContentsController" destination="37a-X7-Mxi" id="BKs-WY-xXM"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1378.5" y="83"/>
         </scene>

@@ -47,7 +47,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return items.count
     }
     
@@ -59,7 +58,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     }
     
  
-   
  
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let placesClient = GMSPlacesClient()
@@ -96,7 +94,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
             if let error = error {
                 println("Autocomplete error \(error)")
             }
-             for result in results! {
+            for result in results! {
                 self.items.append(result as! GMSAutocompletePrediction)
                 self.tableView.reloadData()
             }
@@ -107,7 +105,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail"
         {
-            let path = self.tableView.indexPathForSelectedRow()!
+            let path = self.tableView.indexPathForSelectedRow()
             let detailView = segue.destinationViewController as! SearchDetailViewController
             detailView.detailItem = self.selectedItem!
         }
