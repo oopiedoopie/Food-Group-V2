@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
         
-        GMSServices.provideAPIKey("AIzaSyDnV61Pk8XVNenG9wJoWy4tBCE5FOSHs70")
         Parse.enableLocalDatastore()
         Parse.setApplicationId("nwfq7dvweeLwaPtjdXaJbeHn9Izsh1tUwzCxsWI5", clientKey: "ubTyayOWL4bVAAKQMyI6hpndcRORNZkJFztM2Hcl")
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)

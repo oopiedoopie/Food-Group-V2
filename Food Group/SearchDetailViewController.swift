@@ -7,27 +7,24 @@
 //
 
 import UIKit
-import GoogleMaps
+import MapKit
 import SVProgressHUD
 
 class SearchDetailViewController: UIViewController {
     
     
-    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var addressLable: UILabel!
     
     
     var locationManager = CLLocationManager()
-    var marker = GMSMarker()
-    var detailItem = GMSPlace?()
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLable.text = detailItem?.name
-        addressLable.text = detailItem?.formattedAddress
-        marker.map = mapView
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
@@ -35,14 +32,10 @@ class SearchDetailViewController: UIViewController {
     
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        var camera = GMSCameraPosition.cameraWithLatitude(newLocation.coordinate.latitude,
-            longitude: newLocation.coordinate.longitude, zoom: 15)
-        mapView.animateToCameraPosition(camera)
-        marker.position = newLocation.coordinate
+       
     }
     
     @IBAction func addButtonWasPressed(sender: AnyObject) {
-        println(detailItem?.placeID)
         self.mapView = nil
     }
     
