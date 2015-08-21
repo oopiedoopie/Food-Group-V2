@@ -296,7 +296,6 @@
                                 </connections>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.12492023294603649" blue="0.11003491143066702" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MRX-1H-YJU" firstAttribute="leading" secondItem="Urg-yA-nap" secondAttribute="leading" id="0UY-Ev-5O0"/>
                             <constraint firstItem="Gwn-gy-3FW" firstAttribute="centerX" secondItem="14f-oj-974" secondAttribute="centerX" id="2kv-ZK-7hG"/>
