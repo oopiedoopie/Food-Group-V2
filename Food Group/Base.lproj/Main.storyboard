@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="3565" y="83"/>
         </scene>
-        <!--Item-->
+        <!--Invite View Controller-->
         <scene sceneID="u9n-Qr-f4C">
             <objects>
-                <viewController id="FkH-aP-kOo" customClass="InviteViewController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Invite View Controller" id="FkH-aP-kOo" customClass="InviteViewController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rb7-OG-OQS"/>
                         <viewControllerLayoutGuide type="bottom" id="7Uo-gN-f7u"/>
@@ -735,7 +735,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="EkL-Y7-Im3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qnC-jE-pO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="f6B-s6-QFf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -747,6 +746,7 @@
                         <segue destination="FkH-aP-kOo" kind="relationship" relationship="viewControllers" id="wMi-f1-dRy"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qnC-jE-pO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-243" y="83"/>
         </scene>
