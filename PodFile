@@ -9,6 +9,5 @@ pod "EGFloatingTextField"
 pod 'FontAwesome.swift'
 pod 'ParseFacebookUtilsV4'
 pod 'SVProgressHUD'
-pod 'GoogleMaps'
 pod 'Google-Mobile-Ads-SDK'
 pod 'PNChart'
