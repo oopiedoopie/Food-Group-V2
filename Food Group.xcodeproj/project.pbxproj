@@ -17,6 +17,8 @@
 		A1372EA71B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1372EA61B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift */; };
 		A1372EA91B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1372EA81B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift */; };
 		A1372EAC1B6D7F8100669CC9 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */; };
+		A16AB6DE1B89166C00D7F5EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16AB6DD1B89166C00D7F5EF /* MapKit.framework */; };
+		A16AB6E01B891D7800D7F5EF /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB6DF1B891D7800D7F5EF /* VoteItem.swift */; };
 		A173EB671B84DB14003CA8E7 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */; };
 		A19197F51B7B910300E2C84E /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19197F41B7B910300E2C84E /* InviteViewController.swift */; };
 		A1C5E02C1B6D77810094FE41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5E02B1B6D77810094FE41 /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		A1372EA61B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellAction.swift; sourceTree = "<group>"; };
 		A1372EA81B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellSideView.swift; sourceTree = "<group>"; };
 		A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
+		A16AB6DD1B89166C00D7F5EF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A16AB6DF1B891D7800D7F5EF /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
 		A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		A181407E1B6D792E0089D6FF /* Food Group-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Food Group-Bridging-Header.h"; sourceTree = "<group>"; };
 		A19197F41B7B910300E2C84E /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				A1D214621B7BD9C300374F70 /* libc++.dylib in Frameworks */,
 				A1D214601B7BD9B800374F70 /* ImageIO.framework in Frameworks */,
 				A1D2145E1B7BD9AC00374F70 /* GLKit.framework in Frameworks */,
+				A16AB6DE1B89166C00D7F5EF /* MapKit.framework in Frameworks */,
 				A1D2145C1B7BD9A500374F70 /* CoreText.framework in Frameworks */,
 				A1D2145A1B7BD99B00374F70 /* CoreData.framework in Frameworks */,
 				A1D214581B7BD99400374F70 /* AVFoundation.framework in Frameworks */,
@@ -133,6 +138,7 @@
 		585FB9AA566A648AA1264999 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A16AB6DD1B89166C00D7F5EF /* MapKit.framework */,
 				A1D214691B7BD9E500374F70 /* SystemConfiguration.framework */,
 				A1D214671B7BD9DE00374F70 /* OpenGLES.framework */,
 				A1D214651B7BD9D500374F70 /* libz.dylib */,
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A119FD3A1B852D80001875E3 /* UIColorExtension.swift */,
+				A16AB6DF1B891D7800D7F5EF /* VoteItem.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -299,6 +306,11 @@
 					A1C5E0251B6D77810094FE41 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 27XXJG8HK4;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					A1C5E03A1B6D77810094FE41 = {
 						CreatedOnToolsVersion = 6.4;
@@ -404,6 +416,7 @@
 				A19197F51B7B910300E2C84E /* InviteViewController.swift in Sources */,
 				A1C5E02E1B6D77810094FE41 /* ViewController.swift in Sources */,
 				A1CAC1CC1B83E8690064232A /* SearchDetailViewController.swift in Sources */,
+				A16AB6E01B891D7800D7F5EF /* VoteItem.swift in Sources */,
 				A1C5E02C1B6D77810094FE41 /* AppDelegate.swift in Sources */,
 				A119FD3B1B852D80001875E3 /* UIColorExtension.swift in Sources */,
 				A1372EA71B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift in Sources */,

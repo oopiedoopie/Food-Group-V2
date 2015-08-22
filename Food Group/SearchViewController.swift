@@ -1,4 +1,5 @@
 import UIKit
+import MapKit
 import SVProgressHUD
 
 class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDisplayDelegate, UITableViewDataSource,UITableViewDelegate {
@@ -16,6 +17,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
   
     var searchInviteesList : [String]?
     var searchEventTitle : String = "Food Group"
+    var location = MKMapItem?()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
      
+        let request = MKLocalSearch()
+        
       }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
