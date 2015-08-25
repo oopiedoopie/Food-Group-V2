@@ -11,14 +11,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
 
     
     //constants and variables
-    var locationManager: CLLocationManager?
-    var southwest = CLLocationCoordinate2D()
-    var northeast = CLLocationCoordinate2D()
+     var userLocationManger = CLLocationManager()
   
+    var mapItems  : [MKMapItem] = [MKMapItem]()
     var searchItems : [VoteItem]?
     var searchEventTitle : String = "Food Group"
     var location = MKMapItem?()
-    
+    var itemDict = NSDictionary()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if(searchItems?.count > 0){
@@ -26,15 +26,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
         }
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager?.distanceFilter = kCLDistanceFilterNone
-            locationManager?.startUpdatingLocation()
-            //hardcoded lat lon for my apartment
-            southwest = CLLocationCoordinate2DMake(34.712828, -82.197865)
-            northeast = CLLocationCoordinate2DMake(34.854390, -82.444470)
+            
+            userLocationManger.desiredAccuracy = kCLLocationAccuracyBest;
+            userLocationManger.distanceFilter = kCLDistanceFilterNone;
+            userLocationManger.startUpdatingLocation()
         }else{
-            SVProgressHUD.showErrorWithStatus("Location services not enabled")
+            SVProgressHUD.showErrorWithStatus("Location services are disabled")
         }
+
       }
    
     
@@ -43,13 +42,24 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return mapItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-       // cell.textLabel?.text = items[indexPath.row].attributedFullText.string
-          return cell
+        itemDict = mapItems[indexPath.row].placemark.addressDictionary
+        var name : String = itemDict.valueForKey("Name") as! String
+        var street : String? = itemDict.valueForKey("Street") as? String
+        var city : String = itemDict.valueForKey("City") as! String
+        var state : String = itemDict.valueForKey("State") as! String
+        var zip : String = itemDict.valueForKey("ZIP") as! String
+        // cell.addressLabel.text = "\(street), \(city), \(state) \(zip)"
+         //cell.distanceLabel.text = "\(distanceInMiles.string(2)) miles away"
+        
+        let item = mapItems[indexPath.row] as MKMapItem
+        cell.textLabel!.text = item.name
+        cell.detailTextLabel?.text =  " - \(street!)" +  " \(city)," + " \(state)" + " \(zip)"
+        return cell
     }
     
  
@@ -62,7 +72,40 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
      
-        let request = MKLocalSearch()
+        mapItems.removeAll(keepCapacity: false)
+        let locationSpan = MKCoordinateSpanMake(0.5, 0.5)
+        let coordinate = CLLocationCoordinate2DMake(userLocationManger.location.coordinate.latitude, userLocationManger.location.coordinate.longitude)
+        let userRegion = MKCoordinateRegionMake(coordinate, locationSpan)
+        let request = MKLocalSearchRequest()
+        request.region = userRegion
+        
+        //add query here
+        request.naturalLanguageQuery = searchBar.text
+        let search = MKLocalSearch(request: request)
+        
+        //here's where we search and iterate through the results
+        search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
+            if (error != nil)
+            {
+                //error
+                SVProgressHUD.showErrorWithStatus("\(error.description as String)")
+                
+            }
+            else if (response.mapItems.count == 0)
+            {
+                SVProgressHUD.showErrorWithStatus("No matches were found.")
+            }
+            else
+            {
+                //add our MKMapItems items to the matchingItems array
+                for item in response.mapItems as! [MKMapItem!]
+                {
+                    self.mapItems.append(item)
+                }
+                //once we have the array, we tell the table to fill with the results
+                self.tableView.reloadData()
+            }
+        })
         
       }
     
