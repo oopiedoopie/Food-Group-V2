@@ -6,11 +6,16 @@
 //  Copyright (c) 2015 Oopie Doopie. All rights reserved.
 //
 
-
+import Foundation
 import MapKit
 
 class VoteItem {
     var inviteeName : String?
     var location : MKMapItem?
     var votes : Int = 0
+    
+     init(inviteeName : String, votes : Int){
+        self.inviteeName = inviteeName
+        self.votes = votes
+    }
 }

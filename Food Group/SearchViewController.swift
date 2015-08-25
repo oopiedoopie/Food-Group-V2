@@ -15,14 +15,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     var southwest = CLLocationCoordinate2D()
     var northeast = CLLocationCoordinate2D()
   
-    var searchInviteesList : [String]?
+    var searchItems : [VoteItem]?
     var searchEventTitle : String = "Food Group"
     var location = MKMapItem?()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(searchInviteesList?.count > 0){
-            nameLabel.text = "\(self.searchInviteesList![0]), it's your turn to pick a place!"
+        if(searchItems?.count > 0){
+            nameLabel.text = "\(self.searchItems![0].inviteeName!), it's your turn to pick a place!"
         }
         
         if CLLocationManager.locationServicesEnabled() {

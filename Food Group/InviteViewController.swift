@@ -18,16 +18,18 @@ import PureLayout
     @IBOutlet weak var tableView: UITableView!
     
     //variables and constants
-    var inviteeList : [String] = []
+    var items : [VoteItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         eventTitleTextField.delegate = self
         eventTitleTextField.floatingLabel = true
         eventTitleTextField.setPlaceHolder("Event title here")
         eventTitleTextField.borderStyle = UITextBorderStyle.None
         eventTitleTextField.textColor = UIColor.blackColor()
         self.view.addSubview(eventTitleTextField)
+        
         searchBar.returnKeyType = .Next
     }
     
@@ -38,11 +40,11 @@ import PureLayout
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return inviteeList.count
+        return items.count
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        inviteeList.append(self.searchBar.text)
+        items.append(VoteItem(inviteeName: self.searchBar.text, votes: 0))
         self.tableView.reloadData()
         searchBar.text = ""
     }
@@ -50,7 +52,7 @@ import PureLayout
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = self.inviteeList[indexPath.row]
+        cell.textLabel?.text = self.items[indexPath.row].inviteeName
         return cell
     }
     
@@ -79,7 +81,7 @@ import PureLayout
         if segue.identifier == "showSearch"
         {
             let searchView = segue.destinationViewController as! SearchViewController
-            searchView.searchInviteesList = self.inviteeList
+            searchView.searchItems = self.items
             searchView.searchEventTitle = eventTitleTextField.text
         }
     }
