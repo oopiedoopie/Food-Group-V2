@@ -48,13 +48,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         itemDict = mapItems[indexPath.row].placemark.addressDictionary
-        var name : String = itemDict.valueForKey("Name") as! String
         var street : String? = itemDict.valueForKey("Street") as? String
         var city : String = itemDict.valueForKey("City") as! String
         var state : String = itemDict.valueForKey("State") as! String
         var zip : String = itemDict.valueForKey("ZIP") as! String
-        // cell.addressLabel.text = "\(street), \(city), \(state) \(zip)"
-         //cell.distanceLabel.text = "\(distanceInMiles.string(2)) miles away"
         
         let item = mapItems[indexPath.row] as MKMapItem
         cell.textLabel!.text = item.name
@@ -106,7 +103,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
                 self.tableView.reloadData()
             }
         })
-        
+
       }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
