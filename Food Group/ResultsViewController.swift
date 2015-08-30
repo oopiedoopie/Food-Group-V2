@@ -15,7 +15,16 @@ class ResultsViewController: UIViewController, PNChartDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
+=======
+        let chartSize = self.barChart.frame.size
+        let chartWidth = chartSize.width
+        let chartHeight = chartSize.height
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+>>>>>>> parent of b1ed0e1... small changes
         barChart.xLabels = ["Brixx Pizza", "El Jalisco", "La Parilla", "Zaxbys", "Chick-fil-A", "Pizza Inn"]
         barChart.yValues = [5, 2, 3, 1, 1, 1]
         barChart.isShowNumbers = true
