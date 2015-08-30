@@ -229,6 +229,7 @@
             </objects>
             <point key="canvasLocation" x="543" y="100"/>
         </scene>
+<<<<<<< Updated upstream
         <!--Recall View Controller-->
         <scene sceneID="LF3-jh-738">
             <objects>
@@ -253,9 +254,25 @@
                     <navigationItem key="navigationItem" id="Mlm-R0-1jD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozt-lQ-ssL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+=======
+        <!--Navigation Controller-->
+        <scene sceneID="52i-oV-e3e">
+            <objects>
+                <navigationController id="pvi-mB-WME" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCp-hG-g3e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kJp-N6-nuM" kind="relationship" relationship="rootViewController" id="pFu-6E-XKU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kd1-qJ-g5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+>>>>>>> Stashed changes
             </objects>
             <point key="canvasLocation" x="1306" y="787"/>
         </scene>
+<<<<<<< Updated upstream
         <!--Page View Controller-->
         <scene sceneID="Q9j-Pq-j22">
             <objects>
@@ -264,10 +281,12 @@
             </objects>
             <point key="canvasLocation" x="2189" y="886"/>
         </scene>
+=======
+>>>>>>> Stashed changes
         <!--View Controller-->
         <scene sceneID="5mv-nJ-01e">
             <objects>
-                <viewController id="kJp-N6-nuM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" id="kJp-N6-nuM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rYs-sN-A5A"/>
                         <viewControllerLayoutGuide type="bottom" id="kEY-Jp-Nkd"/>
@@ -276,6 +295,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< Updated upstream
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vZ-rp-NCX">
                                 <rect key="frame" x="16" y="28" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -288,21 +308,24 @@
                                     <constraint firstAttribute="height" constant="523" id="kgb-Rk-LOm"/>
                                 </constraints>
                             </imageView>
+=======
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z7J-wT-ryj">
+                                <rect key="frame" x="16" y="64" width="568" height="516"/>
+                                <color key="backgroundColor" red="0.26666668059999998" green="0.70980393890000004" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+>>>>>>> Stashed changes
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="mrj-p7-1dd" secondAttribute="bottom" constant="20" symbolic="YES" id="03T-Aw-vh3"/>
-                            <constraint firstItem="mrj-p7-1dd" firstAttribute="trailing" secondItem="ZIp-e1-pkK" secondAttribute="trailingMargin" id="11p-hF-Elo"/>
-                            <constraint firstItem="mrj-p7-1dd" firstAttribute="trailing" secondItem="1vZ-rp-NCX" secondAttribute="trailing" id="2i0-JU-kPk"/>
-                            <constraint firstItem="mrj-p7-1dd" firstAttribute="leading" secondItem="ZIp-e1-pkK" secondAttribute="leadingMargin" id="DNY-t9-P9s"/>
-                            <constraint firstItem="mrj-p7-1dd" firstAttribute="leading" secondItem="1vZ-rp-NCX" secondAttribute="leading" id="SIy-st-qLY"/>
-                            <constraint firstItem="mrj-p7-1dd" firstAttribute="top" secondItem="1vZ-rp-NCX" secondAttribute="bottom" constant="8" symbolic="YES" id="n5K-dk-RYA"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Q4R-Sw-8Rv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TX-z6-xHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="2927" y="886"/>
+=======
+            <point key="canvasLocation" x="1378" y="886"/>
+>>>>>>> Stashed changes
         </scene>
         <!--Search View Controller-->
         <scene sceneID="E6O-DI-PeM">
