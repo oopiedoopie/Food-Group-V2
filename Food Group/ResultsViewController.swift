@@ -9,12 +9,13 @@
 import UIKit
 import PNChart
 
-class ResultsViewController: UIViewController{
+class ResultsViewController: UIViewController, PNChartDelegate{
     
     @IBOutlet weak var barChart: PNBarChart!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        barChart.delegate = self
         let chartSize = self.barChart.frame.size
         let chartWidth = chartSize.width
         let chartHeight = chartSize.height
