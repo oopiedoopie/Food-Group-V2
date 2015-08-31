@@ -1,3 +1,12 @@
+//
+//  SearchViewController.swift
+//  Food Group
+//
+//  Created by Eric Cauble on 8/18/15.
+//  Copyright (c) 2015 Oopie Doopie. All rights reserved.
+//
+
+
 import UIKit
 import MapKit
 import SVProgressHUD
