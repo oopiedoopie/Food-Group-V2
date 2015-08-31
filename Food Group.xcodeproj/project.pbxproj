@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5260F6E58FA91AB4B3D64346 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B41F8EC3D72AAC079D0276 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5C47E7261B8BD03E00E4E576 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47E7251B8BD03E00E4E576 /* ContentViewController.swift */; };
 		5CDC851D1B890871008EB430 /* TutViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC851C1B890871008EB430 /* TutViewStyle.swift */; };
 		A119FD391B852912001875E3 /* FGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD381B852912001875E3 /* FGButton.swift */; };
 		A119FD3B1B852D80001875E3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD3A1B852D80001875E3 /* UIColorExtension.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C47E7251B8BD03E00E4E576 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		5CDC851C1B890871008EB430 /* TutViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutViewStyle.swift; sourceTree = "<group>"; };
 		A119FD381B852912001875E3 /* FGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGButton.swift; sourceTree = "<group>"; };
 		A119FD3A1B852D80001875E3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				A1CAC1CB1B83E8690064232A /* SearchDetailViewController.swift */,
 				A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */,
 				A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */,
+				5C47E7251B8BD03E00E4E576 /* ContentViewController.swift */,
 				A1C5E02D1B6D77810094FE41 /* ViewController.swift */,
 				A1C5E02F1B6D77810094FE41 /* Main.storyboard */,
 				A1C5E0321B6D77810094FE41 /* Images.xcassets */,
@@ -412,6 +415,14 @@
 			files = (
 				A173EB671B84DB14003CA8E7 /* ResultsViewController.swift in Sources */,
 				A119FD3D1B852FE5001875E3 /* FGViewStyle.swift in Sources */,
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+				A1C54B151B8CE976000DE97F /* CounterViewController.swift in Sources */,
+=======
+				5C47E7261B8BD03E00E4E576 /* ContentViewController.swift in Sources */,
+>>>>>>> Stashed changes
+>>>>>>> master
 				A1ECEC041B7B9C930024F2FA /* SearchViewController.swift in Sources */,
 				A19197F51B7B910300E2C84E /* InviteViewController.swift in Sources */,
 				A1C5E02E1B6D77810094FE41 /* ViewController.swift in Sources */,

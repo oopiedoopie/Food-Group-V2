@@ -2680,6 +2680,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					4A32D98B51E8DCFE407948F5B6EB566A = {
+						DevelopmentTeam = 27XXJG8HK4;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3272,6 +3277,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E05BD20D33ED21B74DE51CE303F4E846 /* ParseFacebookUtilsV4-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1.7.5;
 				DEFINES_MODULE = YES;
@@ -3544,6 +3550,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24AE09894912058347421F10878F148F /* APAddressBook-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0.1.11;
 				DEFINES_MODULE = YES;
