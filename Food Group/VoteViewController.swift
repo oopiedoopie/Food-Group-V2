@@ -45,7 +45,7 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         addCellBlock = {(tableView: SBGestureTableView, cell: SBGestureTableViewCell) -> Void in
             let indexPath = tableView.indexPathForCell(cell)
-            SVProgressHUD.showSuccessWithStatus("Voted yesf for \(self.items[indexPath!.row])")
+            SVProgressHUD.showSuccessWithStatus("Voted yes for \(self.items[indexPath!.row])")
             self.items.removeAtIndex(indexPath!.row)
             tableView.removeCell(cell, duration: 0.3, completion: nil)
             self.checkRowCount()
