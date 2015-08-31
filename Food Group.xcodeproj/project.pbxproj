@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5260F6E58FA91AB4B3D64346 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B41F8EC3D72AAC079D0276 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		5CDC851D1B890871008EB430 /* TutViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC851C1B890871008EB430 /* TutViewStyle.swift */; };
 		A119FD391B852912001875E3 /* FGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD381B852912001875E3 /* FGButton.swift */; };
 		A119FD3B1B852D80001875E3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD3A1B852D80001875E3 /* UIColorExtension.swift */; };
 		A119FD3D1B852FE5001875E3 /* FGViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD3C1B852FE5001875E3 /* FGViewStyle.swift */; };
@@ -53,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5CDC851C1B890871008EB430 /* TutViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutViewStyle.swift; sourceTree = "<group>"; };
 		A119FD381B852912001875E3 /* FGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGButton.swift; sourceTree = "<group>"; };
 		A119FD3A1B852D80001875E3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A119FD3C1B852FE5001875E3 /* FGViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGViewStyle.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 			children = (
 				A119FD381B852912001875E3 /* FGButton.swift */,
 				A119FD3C1B852FE5001875E3 /* FGViewStyle.swift */,
-				5CDC851C1B890871008EB430 /* TutViewStyle.swift */,
 			);
 			name = Style;
 			sourceTree = "<group>";
@@ -424,7 +421,6 @@
 				A119FD391B852912001875E3 /* FGButton.swift in Sources */,
 				A1372EA91B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift in Sources */,
 				A1372EAC1B6D7F8100669CC9 /* VoteViewController.swift in Sources */,
-				5CDC851D1B890871008EB430 /* TutViewStyle.swift in Sources */,
 				A1372EA31B6D7E7000669CC9 /* SBGestureTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
