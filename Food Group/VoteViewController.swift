@@ -26,10 +26,10 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let thumbsDownIcon =  UIImage.fontAwesomeIconWithName(.ThumbsDown, textColor: UIColor.whiteColor(), size: CGSizeMake(30, 30))
     let greenColor = UIColor(red: 85.0/255, green: 213.0/255, blue: 80.0/255, alpha: 1)
     let redColor = UIColor(red: 213.0/255, green: 70.0/255, blue: 70.0/255, alpha: 1)
- 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        insertAd()
         tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableView.didMoveCellFromIndexPathToIndexPathBlock = {(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) -> Void in
             self.objects.exchangeObjectAtIndex(toIndexPath.row, withObjectAtIndex: fromIndexPath.row)
@@ -50,6 +50,7 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
             tableView.removeCell(cell, duration: 0.3, completion: nil)
             self.checkRowCount()
         }
+       
     }
     
     //trigger segue when voting is done
@@ -84,7 +85,6 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SBGestureTableViewCell
-
         cell.firstLeftAction = SBGestureTableViewCellAction(icon: thumbsUpIcon, color: greenColor, fraction: 0.3, didTriggerBlock: addCellBlock)
         cell.secondLeftAction = SBGestureTableViewCellAction(icon: thumbsUpIcon , color: greenColor, fraction: 0.6, didTriggerBlock: addCellBlock)
         cell.firstRightAction = SBGestureTableViewCellAction(icon: thumbsDownIcon , color: redColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
@@ -94,6 +94,13 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func randRange (lower: Int , upper: Int) -> Int {
+        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+    }
     
+    //inserts add cell in items array, called in viewDidLoad()
+    func insertAd(){
+        items.insert("** ADVERTISEMENT **",  atIndex: randRange(1, upper: items.count))
+    }
     
 }

@@ -23,15 +23,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
      var userLocationManger = CLLocationManager()
   
     var mapItems  : [MKMapItem] = [MKMapItem]()
-    var searchItems : [VoteItem]?
+    var searchItems : [VoteItem] = [VoteItem]()
     var searchEventTitle : String = "Food Group"
     var location = MKMapItem?()
     var itemDict = NSDictionary()
+    var count = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(searchItems?.count > 0){
-            nameLabel.text = "\(self.searchItems![0].inviteeName!), it's your turn to pick a place!"
+        if(searchItems.count > 0){
+            nameLabel.text = String(self.searchItems[0].inviteeName!) + " it's your turn to pick a place!"
         }
         
         if CLLocationManager.locationServicesEnabled() {
@@ -71,7 +72,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
  
  
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       
+        location = mapItems[indexPath.row]
+        self.searchItems[self.count].location = self.location
+        println(searchItems[self.count].inviteeName)
     }
     
     
@@ -120,15 +123,19 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     }
  
    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail"
-        {
-            let path = self.tableView.indexPathForSelectedRow()
-            let detailView = segue.destinationViewController as! SearchDetailViewController
-        }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showDetail"
+//        {
+//            let path = self.tableView.indexPathForSelectedRow()
+//            let detailView = segue.destinationViewController as! SearchDetailViewController
+//          
+//        }
+//        
+//    }
+    
+    func resetForNextSearch(){
         
     }
-    
   
     
 }

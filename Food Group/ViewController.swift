@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Oopie Doopie. All rights reserved.
 //
 
+
+
+//THIS CLASS WAS FOR TESTING ADDRESSBOOK/PARSE, delete later
 import UIKit
 import SVProgressHUD
 import AddressBook
