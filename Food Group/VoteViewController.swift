@@ -16,7 +16,7 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: SBGestureTableView!
     //MARK: - Instance Variables
     var items = ["Pizza Inn, Woodruff Rd", "Brixx Pizza, Woodruff Rd", "El Jalisco, West Butler Rd", "La Parilla, Woodruff Rd", "Zaxbys, Butler Rd", "Chick-fil-A, Haywood Rd", "Applebees, Anytown USA"]
-
+    var addCellIndex : Int = 0
     var objects = NSMutableArray()
     var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
     var addCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
@@ -90,6 +90,11 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.firstRightAction = SBGestureTableViewCellAction(icon: thumbsDownIcon , color: redColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
         cell.secondRightAction = SBGestureTableViewCellAction(icon: thumbsDownIcon , color: redColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
         cell.textLabel?.text = items[indexPath.row]
+        
+        //color advertisment, and other style stuff
+        if(indexPath.row == self.addCellIndex){
+            cell.backgroundColor = UIColor.yellowColor()
+        }
            
         return cell
     }
@@ -100,7 +105,8 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //inserts add cell in items array, called in viewDidLoad()
     func insertAd(){
-        items.insert("** ADVERTISEMENT **",  atIndex: randRange(1, upper: items.count))
+        self.addCellIndex = randRange(1, upper: items.count)
+        items.insert("** ADVERTISEMENT **",  atIndex: addCellIndex)
     }
     
 }
