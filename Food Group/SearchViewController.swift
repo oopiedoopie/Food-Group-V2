@@ -59,13 +59,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         itemDict = mapItems[indexPath.row].placemark.addressDictionary
         var street : String? = itemDict.valueForKey("Street") as? String
-        var city : String = itemDict.valueForKey("City") as! String
-        var state : String = itemDict.valueForKey("State") as! String
-        var zip : String = itemDict.valueForKey("ZIP") as! String
+        var city : String? = itemDict.valueForKey("City") as? String
+        var state : String? = itemDict.valueForKey("State") as? String
+        var zip : String? = itemDict.valueForKey("ZIP") as? String
         
         let item = mapItems[indexPath.row] as MKMapItem
         cell.textLabel!.text = item.name
-        cell.detailTextLabel?.text =  " - \(street!)" +  " \(city)," + " \(state)" + " \(zip)"
+       // cell.detailTextLabel?.text =  " - \(street!)" +  " \(city)," + " \(state)" + " \(zip)"
         return cell
     }
     

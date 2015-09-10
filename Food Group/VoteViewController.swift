@@ -94,6 +94,7 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //color advertisment, and other style stuff
         if(indexPath.row == self.addCellIndex){
             cell.backgroundColor = UIColor.yellowColor()
+           // cell.detailTextLabel?.text = "Advertisement"
         }
            
         return cell
