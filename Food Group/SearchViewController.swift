@@ -58,14 +58,32 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         itemDict = mapItems[indexPath.row].placemark.addressDictionary
-        var street : String? = itemDict.valueForKey("Street") as? String
-        var city : String? = itemDict.valueForKey("City") as? String
-        var state : String? = itemDict.valueForKey("State") as? String
-        var zip : String? = itemDict.valueForKey("ZIP") as? String
+        var street = String(), city = String(), state = String(), zip = String()
         
+        if let object: AnyObject =  itemDict.valueForKey("Street"){
+            street = object as! String
+        }else{
+           street = ""
+        }
+        if let object: AnyObject =  itemDict.valueForKey("City"){
+            city = object as! String
+        }else{
+            city = ""
+        }
+        if let object: AnyObject  = itemDict.valueForKey("State"){
+            state = object as! String
+        }else{
+            state = ""
+        }
+        if let object: AnyObject = itemDict.valueForKey("ZIP"){
+            zip = object as! String
+        }else{
+            zip = ""
+        }
         let item = mapItems[indexPath.row] as MKMapItem
         cell.textLabel!.text = item.name
-       // cell.detailTextLabel?.text =  " - \(street!)" +  " \(city)," + " \(state)" + " \(zip)"
+        let formattedAddress : String =  "\(street) \(city) \(state), \(zip)"
+        cell.detailTextLabel?.text = formattedAddress
         return cell
     }
     
@@ -73,8 +91,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
  
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         location = mapItems[indexPath.row]
-        self.searchItems[self.count].location = self.location
-        println(searchItems[self.count].inviteeName)
+       // self.searchItems[self.count].location = self.location
     }
     
     
@@ -123,15 +140,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     }
  
    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showDetail"
-//        {
-//            let path = self.tableView.indexPathForSelectedRow()
-//            let detailView = segue.destinationViewController as! SearchDetailViewController
-//          
-//        }
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail"
+        {
+            let path = self.tableView.indexPathForSelectedRow()
+            let detailView = segue.destinationViewController as! SearchDetailViewController
+          
+        }
+        
+    }
     
     func resetForNextSearch(){
         
