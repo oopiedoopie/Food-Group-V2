@@ -19,7 +19,7 @@ class SearchDetailViewController: UIViewController {
     
     
     var locationManager = CLLocationManager()
-
+    var mapItem = MKMapItem()
     
     
     override func viewDidLoad() {
@@ -28,6 +28,13 @@ class SearchDetailViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
+        
+        var span = MKCoordinateSpanMake(0.5, 0.5)
+        var region = MKCoordinateRegion(center: CLLocationCoordinate2DMake(mapItem.placemark.location.coordinate.latitude, mapItem.placemark.location.coordinate.longitude), span: span)
+        
+        mapView.setRegion(region, animated: true)
+        mapView.addAnnotation(mapItem.placemark)
+        mapView.showsUserLocation = true
      }
     
     
@@ -36,8 +43,20 @@ class SearchDetailViewController: UIViewController {
     }
     
     @IBAction func addButtonWasPressed(sender: AnyObject) {
-        self.mapView = nil
+       // self.mapView = nil
+
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showVote"
+        {
+                let voteView = segue.destinationViewController as! VoteViewController
+            
+            }
+
+    }
+    
     
     deinit{
         print("Detail view was deinit")

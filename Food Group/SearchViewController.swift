@@ -143,8 +143,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail"
         {
-            let path = self.tableView.indexPathForSelectedRow()
+            if let path = self.tableView.indexPathForSelectedRow(){
             let detailView = segue.destinationViewController as! SearchDetailViewController
+               detailView.mapItem = self.mapItems[path.row]
+            }
           
         }
         
