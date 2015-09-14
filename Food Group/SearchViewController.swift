@@ -132,7 +132,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
                 self.tableView.reloadData()
             }
         })
-
       }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
