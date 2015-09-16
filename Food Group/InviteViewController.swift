@@ -45,7 +45,7 @@ import PureLayout
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        items.append(VoteItem(inviteeName: self.searchBar.text, votes: 0))
+        items.append(VoteItem(inviteeName: self.searchBar.text!, votes: 0))
         self.tableView.reloadData()
         searchBar.text = ""
     }
@@ -57,13 +57,13 @@ import PureLayout
         return cell
     }
     
-  
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        super.touchesBegan(touches, withEvent: event)
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
         self.eventTitleTextField.endEditing(true)
-        
     }
+  
+ 
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -83,7 +83,7 @@ import PureLayout
         {
             let searchView = segue.destinationViewController as! SearchViewController
             searchView.searchItems = self.items
-            searchView.searchEventTitle = eventTitleTextField.text
+            searchView.searchEventTitle = eventTitleTextField.text!
         }
     }
     

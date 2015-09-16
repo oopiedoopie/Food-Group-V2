@@ -69,7 +69,9 @@ public extension UIFont {
 
 public extension String {
     public static func fontAwesomeIconWithName(name: FontAwesome) -> String {
-        return name.rawValue.substringToIndex(advance(name.rawValue.startIndex, 1))
+        //return name.rawValue.substringToIndex(advance(name.rawValue.startIndex, 1))
+        return name.rawValue.substringToIndex((name.rawValue.startIndex.advancedBy(1)))
+
     }
 }
 
@@ -79,7 +81,7 @@ public extension UIImage {
         paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
         paragraph.alignment = .Center
         let attributedString = NSAttributedString(string: String.fontAwesomeIconWithName(name) as String, attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(max(size.width, size.height)), NSForegroundColorAttributeName: textColor, NSParagraphStyleAttributeName:paragraph])
-        let size = sizeOfAttributeString(attributedString, size.width)
+        let size = sizeOfAttributeString(attributedString, maxWidth: size.width)
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
         attributedString.drawInRect(CGRectMake(0, 0, size.width, size.height))
         let image = UIGraphicsGetImageFromCurrentImageContext()

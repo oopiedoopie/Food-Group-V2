@@ -11,7 +11,7 @@ import UIKit
 class FGButton: UIButton
 {
     //add style to generic UIButton
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layer.shadowOpacity = 0.0
         layer.shadowOffset = CGSize(width: 3.0, height: 2.0)

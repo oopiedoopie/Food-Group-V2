@@ -30,7 +30,7 @@ class SearchDetailViewController: UIViewController {
         locationManager.startUpdatingHeading()
         
         var span = MKCoordinateSpanMake(0.5, 0.5)
-        var region = MKCoordinateRegion(center: CLLocationCoordinate2DMake(mapItem.placemark.location.coordinate.latitude, mapItem.placemark.location.coordinate.longitude), span: span)
+        var region = MKCoordinateRegion(center: CLLocationCoordinate2DMake(mapItem.placemark.location!.coordinate.latitude, mapItem.placemark.location!.coordinate.longitude), span: span)
         
         mapView.setRegion(region, animated: true)
         mapView.addAnnotation(mapItem.placemark)

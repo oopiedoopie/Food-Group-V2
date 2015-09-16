@@ -46,7 +46,7 @@ public class EGFloatingTextField: UITextField {
     
     
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
@@ -303,12 +303,12 @@ public class EGFloatingTextField: UITextField {
             
             if self.validationType! == .Email {
                 
-                var isValid = self.emailValidationBlock(text: self.text, message: &message)
+                var isValid = self.emailValidationBlock(text: self.text!, message: &message)
                 
                 performValidation(isValid,message: message)
                 
             } else {
-                var isValid = self.numberValidationBlock(text: self.text, message: &message)
+                var isValid = self.numberValidationBlock(text: self.text!, message: &message)
                 
                 performValidation(isValid,message: message)
             }

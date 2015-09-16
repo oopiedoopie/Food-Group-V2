@@ -11,7 +11,7 @@ class FGViewStyle: UIView
 {
     //add style to generic UIButton
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 3.0, height: 2.0)
         layer.shadowRadius = 5.0

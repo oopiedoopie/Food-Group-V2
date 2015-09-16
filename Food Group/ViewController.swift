@@ -32,13 +32,13 @@ class ViewController: UIViewController {
         switch authorizationStatus {
         case .Denied, .Restricted:
             //1
-            println("Denied")
+            print("Denied")
         case .Authorized:
             //2
-            println("Authorized")
+            print("Authorized")
         case .NotDetermined:
             //3
-            println("Not Determined")
+            print("Not Determined")
         }
         
         let user = PFUser()
@@ -55,9 +55,9 @@ class ViewController: UIViewController {
             (granted: Bool, error: CFError!) in
             dispatch_async(dispatch_get_main_queue()) {
                 if !granted {
-                    println("Just denied")
+                    print("Just denied")
                 } else {
-                    println("Just authorized")
+                    print("Just authorized")
                 }
             }
         }

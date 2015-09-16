@@ -56,8 +56,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        itemDict = mapItems[indexPath.row].placemark.addressDictionary
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        itemDict = mapItems[indexPath.row].placemark.addressDictionary!
         var street = String(), city = String(), state = String(), zip = String()
         
         if let object: AnyObject =  itemDict.valueForKey("Street"){
@@ -100,7 +100,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
      
         mapItems.removeAll(keepCapacity: false)
         let locationSpan = MKCoordinateSpanMake(0.5, 0.5)
-        let coordinate = CLLocationCoordinate2DMake(userLocationManger.location.coordinate.latitude, userLocationManger.location.coordinate.longitude)
+        let coordinate = CLLocationCoordinate2DMake(userLocationManger.location!.coordinate.latitude, userLocationManger.location!.coordinate.longitude)
         let userRegion = MKCoordinateRegionMake(coordinate, locationSpan)
         let request = MKLocalSearchRequest()
         request.region = userRegion
@@ -109,30 +109,22 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
         request.naturalLanguageQuery = searchBar.text
         let search = MKLocalSearch(request: request)
         
-        //here's where we search and iterate through the results
-        search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
-            if (error != nil)
-            {
-                //error
-                SVProgressHUD.showErrorWithStatus("\(error.description as String)")
+        search.startWithCompletionHandler{
+            response, error in
+            
+            guard let response = response else {
+                return
+            }
+            
+            for item in response.mapItems{
+                    self.mapItems.append(item)
+                //once we have the array, we tell the table to fill with the results
                 
             }
-            else if (response.mapItems.count == 0)
-            {
-                SVProgressHUD.showErrorWithStatus("No matches were found.")
-            }
-            else
-            {
-                //add our MKMapItems items to the matchingItems array
-                for item in response.mapItems as! [MKMapItem!]
-                {
-                    self.mapItems.append(item)
-                }
-                //once we have the array, we tell the table to fill with the results
-                self.tableView.reloadData()
-            }
-        })
-      }
+            self.tableView.reloadData()
+
+        }
+    }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -142,7 +134,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail"
         {
-            if let path = self.tableView.indexPathForSelectedRow(){
+            if let path = self.tableView.indexPathForSelectedRow{
             let detailView = segue.destinationViewController as! SearchDetailViewController
                detailView.mapItem = self.mapItems[path.row]
             }

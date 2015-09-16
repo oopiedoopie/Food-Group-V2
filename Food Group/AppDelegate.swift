@@ -26,14 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
-        
-        let userNotificationTypes = (UIUserNotificationType.Alert |
-            UIUserNotificationType.Badge |
-            UIUserNotificationType.Sound);
-        
-        let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
+//        
+//        let userNotificationTypes = (UIUserNotificationType.Alert |
+//            UIUserNotificationType.Badge |
+//            UIUserNotificationType.Sound);
+//        
+//        let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+//        application.registerUserNotificationSettings(settings)
+//        application.registerForRemoteNotifications()
         
         
         // Register for Push Notitications
@@ -52,18 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
             }
         }
-        if application.respondsToSelector("registerUserNotificationSettings:") {
-            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
-            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
-        } else {
-            let types = UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert
-            var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
-            application.registerUserNotificationSettings( settings )
-            application.registerForRemoteNotifications()
-        }
-        
+//        if application.respondsToSelector("registerUserNotificationSettings:") {
+//            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+//            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+//            application.registerUserNotificationSettings(settings)
+//            application.registerForRemoteNotifications()
+//        } else {
+//            let types = UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert
+//            var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
+//            application.registerUserNotificationSettings( settings )
+//            application.registerForRemoteNotifications()
+//        }
+//        
         
         
         return true
@@ -119,16 +119,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Mark: - Facebook response
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        //Even though the Facebook SDK can make this determinitaion on its own,
-        //let's make sure that the facebook SDK only sees urls intended for it,
-        //facebook has enough info already!
-        let isFacebookURL = url.scheme != nil && url.scheme!.hasPrefix("fb\(FBSDKSettings.appID())") && url.host == "authorize"
-        if isFacebookURL {
-            return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
-        }
-        return false
-    }
+//    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+//        //Even though the Facebook SDK can make this determinitaion on its own,
+//        //let's make sure that the facebook SDK only sees urls intended for it,
+//        //facebook has enough info already!
+//        let isFacebookURL = url.scheme != nil && url.scheme.hasPrefix("fb\(FBSDKSettings.appID())") && url.host == "authorize"
+//        if isFacebookURL {
+//            return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+//        }
+//        return false
+//    }
     
     
  

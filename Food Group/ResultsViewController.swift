@@ -19,8 +19,8 @@ class ResultsViewController: UIViewController, PNChartDelegate{
         let chartSize = self.barChart.frame.size
         let chartWidth = chartSize.width
         let chartHeight = chartSize.height
-        println(chartWidth)
-        println(chartHeight)
+        print(chartWidth)
+        print(chartHeight)
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
