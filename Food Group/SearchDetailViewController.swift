@@ -16,11 +16,15 @@ class SearchDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var addressLable: UILabel!
-    
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var webAddressButton: UIButton!
+  
+
     
     var locationManager = CLLocationManager()
     var mapItem = MKMapItem()
-    
+    var itemDict = NSDictionary()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +33,44 @@ class SearchDetailViewController: UIViewController {
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
         
-        var span = MKCoordinateSpanMake(0.5, 0.5)
-        var region = MKCoordinateRegion(center: CLLocationCoordinate2DMake(mapItem.placemark.location!.coordinate.latitude, mapItem.placemark.location!.coordinate.longitude), span: span)
+        let span = MKCoordinateSpanMake(0.5, 0.5)
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2DMake(mapItem.placemark.location!.coordinate.latitude, mapItem.placemark.location!.coordinate.longitude), span: span)
         
         mapView.setRegion(region, animated: true)
         mapView.addAnnotation(mapItem.placemark)
         mapView.showsUserLocation = true
-     }
+        
+        titleLable.text = self.mapItem.name
+        
+        itemDict = mapItem.placemark.addressDictionary!
+        var street = String(), city = String(), state = String(), zip = String()
+        
+        if let object: AnyObject =  itemDict.valueForKey("Street"){
+            street = object as! String
+        }else{
+            street = ""
+        }
+        if let object: AnyObject =  itemDict.valueForKey("City"){
+            city = object as! String
+        }else{
+            city = ""
+        }
+        if let object: AnyObject  = itemDict.valueForKey("State"){
+            state = object as! String
+        }else{
+            state = ""
+        }
+        if let object: AnyObject = itemDict.valueForKey("ZIP"){
+            zip = object as! String
+        }else{
+            zip = ""
+        }
+        let formattedAddress : String =  "\(street) \(city) \(state), \(zip)"
+        addressLable.text = formattedAddress
+        phoneNumberLabel.text = mapItem.phoneNumber
+        webAddressButton.setTitle(String(mapItem.url!), forState: UIControlState.Normal)
+    
+    }
     
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
@@ -57,6 +92,8 @@ class SearchDetailViewController: UIViewController {
 
     }
     
+    @IBAction func urlButtonPressed(sender: AnyObject) {
+    }
     
     deinit{
         print("Detail view was deinit")

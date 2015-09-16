@@ -91,7 +91,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
  
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         location = mapItems[indexPath.row]
-       // self.searchItems[self.count].location = self.location
     }
     
     
@@ -117,9 +116,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
             }
             
             for item in response.mapItems{
-                    self.mapItems.append(item)
                 //once we have the array, we tell the table to fill with the results
-                
+                //filter out non businesses
+                if(item.phoneNumber != nil){
+                    self.mapItems.append(item)
+                }
             }
             self.tableView.reloadData()
 

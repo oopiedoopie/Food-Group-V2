@@ -15,7 +15,7 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: SBGestureTableView!
     //MARK: - Instance Variables
-    var items = ["Pizza Inn, Woodruff Rd", "Brixx Pizza, Woodruff Rd", "El Jalisco, West Butler Rd", "La Parilla, Woodruff Rd", "Zaxbys, Butler Rd", "Chick-fil-A, Haywood Rd", "Applebees, Anytown USA"]
+    var items = ["Pizza Inn, Woodruff Rd", "Brixx Pizza, Woodruff Rd", "El Jalisco, West Butler Rd", "La Parilla, Woodruff Rd", "Zaxbys, Butler Rd", "Chick-fil-A, Haywood Rd", "Applebees, Congaree Rd"]
     var addCellIndex : Int = 0
     var objects = NSMutableArray()
     var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
@@ -30,7 +30,7 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         insertAd()
-        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        //tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableView.didMoveCellFromIndexPathToIndexPathBlock = {(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) -> Void in
             self.objects.exchangeObjectAtIndex(toIndexPath.row, withObjectAtIndex: fromIndexPath.row)
         }
