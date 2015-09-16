@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import EGFloatingTextField
+import JVFloatLabeledTextField
 import PureLayout
 
  class InviteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchBarDelegate{
  
     
-    @IBOutlet weak var eventTitleTextField: EGFloatingTextField!
+    @IBOutlet weak var eventTitleTextField: JVFloatLabeledTextField!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,8 +24,8 @@ import PureLayout
         super.viewDidLoad()
         
         eventTitleTextField.delegate = self
-        eventTitleTextField.floatingLabel = true
-        eventTitleTextField.setPlaceHolder("Event title here")
+
+        eventTitleTextField.setPlaceholder("Event title here", floatingTitle: "Event title")
         eventTitleTextField.borderStyle = UITextBorderStyle.None
         eventTitleTextField.textColor = UIColor.blackColor()
         eventTitleTextField.backgroundColor = UIColor.orangeColor()
@@ -52,7 +52,7 @@ import PureLayout
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         cell.textLabel?.text = self.items[indexPath.row].inviteeName
         return cell
     }

@@ -26,14 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
-//        
-//        let userNotificationTypes = (UIUserNotificationType.Alert |
-//            UIUserNotificationType.Badge |
-//            UIUserNotificationType.Sound);
-//        
-//        let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-//        application.registerUserNotificationSettings(settings)
-//        application.registerForRemoteNotifications()
+      
         
         
         // Register for Push Notitications
@@ -52,18 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
             }
         }
-//        if application.respondsToSelector("registerUserNotificationSettings:") {
-//            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
-//            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-//            application.registerUserNotificationSettings(settings)
-//            application.registerForRemoteNotifications()
-//        } else {
-//            let types = UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert
-//            var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
-//            application.registerUserNotificationSettings( settings )
-//            application.registerForRemoteNotifications()
-//        }
-//        
+        if UIApplication.instancesRespondToSelector("registerUserNotificationSettings:") {
+            let types = UIUserNotificationType([UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge])
+            let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
         
         
         return true
@@ -71,26 +57,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
 
-//    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-//        let installation = PFInstallation.currentInstallation()
-//        installation.setDeviceTokenFromData(deviceToken)
-//    installation.saveInBackground()
-//    }
-//    
-//    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-//        if error.code == 3010 {
-//            println("Push notifications are not supported in the iOS Simulator.")
-//        } else {
-//            println("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
-//        }
-//    }
-//    
-//    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-//        PFPush.handlePush(userInfo)
-//        if application.applicationState == UIApplicationState.Inactive {
-//            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
-//        }
-//    }
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+    installation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+        }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+        if application.applicationState == UIApplicationState.Inactive {
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+        }
+    }
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

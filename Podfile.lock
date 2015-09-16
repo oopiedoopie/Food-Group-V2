@@ -10,8 +10,6 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.2.0)
   - DRCellSlideGestureRecognizer (1.0.0)
-  - EGFloatingTextField (0.0.1):
-    - PureLayout (~> 2.0)
   - FBSDKCoreKit (4.4.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.4.0)
@@ -24,7 +22,7 @@ PODS:
   - FBSDKLoginKit (4.4.0):
     - FBSDKCoreKit
   - FontAwesome.swift (0.4.3)
-  - Google-Mobile-Ads-SDK (7.4.0)
+  - JVFloatLabeledTextField (1.1.0)
   - Parse (1.7.5.3):
     - Bolts/Tasks (>= 1.2.0)
   - ParseFacebookUtilsV4 (1.7.5.3):
@@ -34,7 +32,6 @@ PODS:
     - Parse (~> 1.7.5.3)
   - PNChart (0.8.6):
     - UICountingLabel (~> 1.2.0)
-  - PureLayout (2.0.6)
   - SVProgressHUD (1.1.3)
   - UICountingLabel (1.2.0)
 
@@ -42,9 +39,8 @@ DEPENDENCIES:
   - Alamofire (~> 2.0)
   - APAddressBook
   - DRCellSlideGestureRecognizer
-  - EGFloatingTextField
   - FontAwesome.swift
-  - Google-Mobile-Ads-SDK
+  - JVFloatLabeledTextField
   - ParseFacebookUtilsV4
   - PNChart
   - SVProgressHUD
@@ -54,15 +50,13 @@ SPEC CHECKSUMS:
   APAddressBook: 2c949367b190a993d2cce769a3b20bce8bcf000c
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   DRCellSlideGestureRecognizer: c7213100aa8b1a54b3388c2e73894039058c7795
-  EGFloatingTextField: a08579d7df26d6c101031a854b462de2350b4095
   FBSDKCoreKit: 75bdd75c980e811db218488d99dd93b7740f4474
   FBSDKLoginKit: 02a9254a4c132412fa03577b0d53e936d068a7fb
   FontAwesome.swift: 4f3dbf913b9ef9db275d02b75f6b794fa3bcbabc
-  Google-Mobile-Ads-SDK: ff8ce0c4b495c60113a6f37916956aab9504d527
+  JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
   Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
   ParseFacebookUtilsV4: ea5db22e87b91cbf99b9d156642e2b97a4db7d51
   PNChart: c8f7aaa8c28abef26e55d80f473d2a1db77cd972
-  PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 

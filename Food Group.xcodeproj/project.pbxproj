@@ -21,7 +21,7 @@
 		A173EB671B84DB14003CA8E7 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */; };
 		A19197F51B7B910300E2C84E /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19197F41B7B910300E2C84E /* InviteViewController.swift */; };
 		A1C5E02C1B6D77810094FE41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5E02B1B6D77810094FE41 /* AppDelegate.swift */; };
-		A1C5E02E1B6D77810094FE41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5E02D1B6D77810094FE41 /* ViewController.swift */; };
+		A1C5E02E1B6D77810094FE41 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5E02D1B6D77810094FE41 /* LogInViewController.swift */; };
 		A1C5E0311B6D77810094FE41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C5E02F1B6D77810094FE41 /* Main.storyboard */; };
 		A1C5E0331B6D77810094FE41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1C5E0321B6D77810094FE41 /* Images.xcassets */; };
 		A1C5E0361B6D77810094FE41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C5E0341B6D77810094FE41 /* LaunchScreen.xib */; };
@@ -68,7 +68,7 @@
 		A1C5E0261B6D77810094FE41 /* Food Group.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Group.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C5E02A1B6D77810094FE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1C5E02B1B6D77810094FE41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1C5E02D1B6D77810094FE41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1C5E02D1B6D77810094FE41 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A1C5E0301B6D77810094FE41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1C5E0321B6D77810094FE41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A1C5E0351B6D77810094FE41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 				A1CAC1CB1B83E8690064232A /* SearchDetailViewController.swift */,
 				A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */,
 				A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */,
-				A1C5E02D1B6D77810094FE41 /* ViewController.swift */,
+				A1C5E02D1B6D77810094FE41 /* LogInViewController.swift */,
 				A1C5E02F1B6D77810094FE41 /* Main.storyboard */,
 				A1C5E0321B6D77810094FE41 /* Images.xcassets */,
 				A1C5E0341B6D77810094FE41 /* LaunchScreen.xib */,
@@ -411,7 +411,7 @@
 				A119FD3D1B852FE5001875E3 /* FGViewStyle.swift in Sources */,
 				A1ECEC041B7B9C930024F2FA /* SearchViewController.swift in Sources */,
 				A19197F51B7B910300E2C84E /* InviteViewController.swift in Sources */,
-				A1C5E02E1B6D77810094FE41 /* ViewController.swift in Sources */,
+				A1C5E02E1B6D77810094FE41 /* LogInViewController.swift in Sources */,
 				A1CAC1CC1B83E8690064232A /* SearchDetailViewController.swift in Sources */,
 				A16AB6E01B891D7800D7F5EF /* VoteItem.swift in Sources */,
 				A1C5E02C1B6D77810094FE41 /* AppDelegate.swift in Sources */,

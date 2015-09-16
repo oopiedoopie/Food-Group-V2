@@ -51,7 +51,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YI-9p-M3I" customClass="EGFloatingTextField" customModule="EGFloatingTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YI-9p-M3I" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="16" y="78" width="568" height="30"/>
                                 <color key="tintColor" red="0.22352941330000001" green="0.73725491759999995" blue="0.69411766529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -655,7 +655,7 @@
                                         <rect key="frame" x="0.0" y="22" width="568" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z7u-LK-ra8" id="ChH-WP-pEb">
-                                            <rect key="frame" x="0.0" y="0.0" width="568" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
