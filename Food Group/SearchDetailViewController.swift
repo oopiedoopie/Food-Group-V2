@@ -24,11 +24,12 @@ class SearchDetailViewController: UIViewController {
     var locationManager = CLLocationManager()
     var mapItem = MKMapItem()
     var itemDict = NSDictionary()
+    var searchItems : [VoteItem] = [VoteItem]()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
@@ -86,8 +87,10 @@ class SearchDetailViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showVote"
         {
-                let voteView = segue.destinationViewController as! VoteViewController
-            
+            let voteView = segue.destinationViewController as! VoteViewController
+            //probably should have some counter that keeps an index of the current invitee
+            self.searchItems[0].location = mapItem
+            voteView.searchItems = self.searchItems
             }
 
     }

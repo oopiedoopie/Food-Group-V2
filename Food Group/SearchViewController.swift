@@ -20,7 +20,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
 
     
     //constants and variables
-     var userLocationManger = CLLocationManager()
+    var userLocationManger = CLLocationManager()
   
     var mapItems  : [MKMapItem] = [MKMapItem]()
     var searchItems : [VoteItem] = [VoteItem]()
@@ -123,7 +123,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
                 }
             }
             self.tableView.reloadData()
-
+        }
+        
+        if(searchBar.text?.characters.count == 0){
+            self.mapItems.removeAll(keepCapacity: false)
+            self.tableView.reloadData()
         }
     }
     
@@ -137,7 +141,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
         {
             if let path = self.tableView.indexPathForSelectedRow{
             let detailView = segue.destinationViewController as! SearchDetailViewController
-               detailView.mapItem = self.mapItems[path.row]
+                detailView.mapItem = self.mapItems[path.row]
+                detailView.searchItems = self.searchItems
             }
           
         }

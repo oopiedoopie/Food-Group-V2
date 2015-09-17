@@ -19,20 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6b-Ku-9ER" customClass="PNBarChart">
-                                <rect key="frame" x="16" y="20" width="568" height="560"/>
+                                <rect key="frame" x="16" y="83" width="568" height="497"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Group Event Title here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tei-Pa-Ngb">
+                                <rect key="frame" x="20" y="28" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Utm-C9-9hG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="a6b-Ku-9ER" secondAttribute="bottom" constant="20" symbolic="YES" id="3uV-9F-JCt"/>
-                            <constraint firstItem="a6b-Ku-9ER" firstAttribute="leading" secondItem="Ipz-ic-lBV" secondAttribute="leadingMargin" constant="-4" id="aGP-Zq-NuG"/>
-                            <constraint firstItem="a6b-Ku-9ER" firstAttribute="top" secondItem="TBf-sa-eGf" secondAttribute="bottom" id="eYU-JE-lh0"/>
-                            <constraint firstItem="a6b-Ku-9ER" firstAttribute="centerX" secondItem="Ipz-ic-lBV" secondAttribute="centerX" id="oc3-bc-g43"/>
+                            <constraint firstItem="a6b-Ku-9ER" firstAttribute="top" secondItem="tei-Pa-Ngb" secondAttribute="bottom" constant="34" id="0Uy-rz-UVW"/>
+                            <constraint firstItem="a6b-Ku-9ER" firstAttribute="leading" secondItem="Ipz-ic-lBV" secondAttribute="leadingMargin" constant="-4" id="AGf-nY-RbU"/>
+                            <constraint firstItem="tei-Pa-Ngb" firstAttribute="trailing" secondItem="Ipz-ic-lBV" secondAttribute="trailingMargin" id="OAQ-vR-SPf"/>
+                            <constraint firstItem="tei-Pa-Ngb" firstAttribute="centerX" secondItem="a6b-Ku-9ER" secondAttribute="centerX" id="TeD-bI-vgc"/>
+                            <constraint firstItem="tei-Pa-Ngb" firstAttribute="leading" secondItem="Ipz-ic-lBV" secondAttribute="leadingMargin" id="YSe-8Z-o6Y"/>
+                            <constraint firstItem="tei-Pa-Ngb" firstAttribute="top" secondItem="TBf-sa-eGf" secondAttribute="bottom" constant="8" symbolic="YES" id="cO0-S5-95y"/>
+                            <constraint firstAttribute="bottom" secondItem="a6b-Ku-9ER" secondAttribute="bottom" constant="20" symbolic="YES" id="x0I-Fe-aoo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="barChart" destination="a6b-Ku-9ER" id="jpR-4U-8u8"/>
+                        <outlet property="eventTitle" destination="tei-Pa-Ngb" id="vOZ-1Z-cCv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVH-QR-2OO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -738,6 +751,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="kC8-5I-zhn" id="XN5-DM-0SQ"/>
                         <outlet property="tableView" destination="sbr-O5-KVR" id="fLN-uK-oFA"/>
                         <segue destination="qwq-4r-r7F" kind="show" identifier="showResults" id="hFH-wt-HCt"/>
                     </connections>

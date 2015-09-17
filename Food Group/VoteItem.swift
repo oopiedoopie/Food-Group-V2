@@ -13,6 +13,7 @@ class VoteItem {
     var inviteeName : String?
     var location : MKMapItem?
     var votes : Int = 0
+    var eventTitle : String?
     
      init(inviteeName : String, votes : Int){
         self.inviteeName = inviteeName

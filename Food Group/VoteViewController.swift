@@ -13,6 +13,7 @@ import SVProgressHUD
 class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: SBGestureTableView!
     //MARK: - Instance Variables
     var items = ["Pizza Inn, Woodruff Rd", "Brixx Pizza, Woodruff Rd", "El Jalisco, West Butler Rd", "La Parilla, Woodruff Rd", "Zaxbys, Butler Rd", "Chick-fil-A, Haywood Rd", "Applebees, Congaree Rd"]
@@ -20,7 +21,8 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var objects = NSMutableArray()
     var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
     var addCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
- 
+    var searchItems : [VoteItem] = [VoteItem]()
+
  
     let thumbsUpIcon = UIImage.fontAwesomeIconWithName(.ThumbsUp, textColor: UIColor.whiteColor(), size: CGSizeMake(30, 30))
     let thumbsDownIcon =  UIImage.fontAwesomeIconWithName(.ThumbsDown, textColor: UIColor.whiteColor(), size: CGSizeMake(30, 30))
@@ -29,6 +31,9 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(searchItems.count > 0){
+            nameLabel.text = String(self.searchItems[0].inviteeName!) + " it's your turn to pick a place!"
+        }
         insertAd()
         //tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableView.didMoveCellFromIndexPathToIndexPathBlock = {(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) -> Void in

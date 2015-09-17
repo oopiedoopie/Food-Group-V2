@@ -12,6 +12,7 @@ import PNChart
 class ResultsViewController: UIViewController, PNChartDelegate{
     
     @IBOutlet weak var barChart: PNBarChart!
+    @IBOutlet weak var eventTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

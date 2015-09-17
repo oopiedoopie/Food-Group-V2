@@ -17,6 +17,8 @@ import PureLayout
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     //variables and constants
     var items : [VoteItem] = []
     
@@ -79,6 +81,7 @@ import PureLayout
    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       // self.items.eventTitle = "asdf"
         if segue.identifier == "showSearch"
         {
             let searchView = segue.destinationViewController as! SearchViewController
