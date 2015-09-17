@@ -47,7 +47,7 @@ import PureLayout
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        items.append(VoteItem(inviteeName: self.searchBar.text!, votes: 0))
+        items.append(VoteItem(inviteeName: self.searchBar.text!, votes: 0, eventTitle: eventTitleTextField.text!))
         self.tableView.reloadData()
         searchBar.text = ""
     }
@@ -86,7 +86,6 @@ import PureLayout
         {
             let searchView = segue.destinationViewController as! SearchViewController
             searchView.searchItems = self.items
-            searchView.searchEventTitle = eventTitleTextField.text!
         }
     }
     

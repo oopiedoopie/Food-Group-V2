@@ -32,7 +32,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UISearchDispl
     override func viewDidLoad() {
         super.viewDidLoad()
         if(searchItems.count > 0){
-            nameLabel.text = String(self.searchItems[0].inviteeName!) + " it's your turn to pick a place!"
+            nameLabel.text = String(self.searchItems[0].inviteeName!) + ", it's your turn to pick a place!"
         }
         
         if CLLocationManager.locationServicesEnabled() {

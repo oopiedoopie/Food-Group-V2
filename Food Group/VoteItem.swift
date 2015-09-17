@@ -15,7 +15,8 @@ class VoteItem {
     var votes : Int = 0
     var eventTitle : String?
     
-     init(inviteeName : String, votes : Int){
+    init(inviteeName : String, votes : Int, eventTitle  : String){
+        self.eventTitle = eventTitle
         self.inviteeName = inviteeName
         self.votes = votes
     }

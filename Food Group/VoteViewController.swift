@@ -32,7 +32,7 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         if(searchItems.count > 0){
-            nameLabel.text = String(self.searchItems[0].inviteeName!) + " it's your turn to pick a place!"
+            nameLabel.text = String(self.searchItems[0].inviteeName!) + ", it's your turn to vote!"
         }
         insertAd()
         //tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
@@ -87,6 +87,15 @@ class VoteViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - UITableViewDataSource cellForRowAtIndexPath
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showResults"
+        {
+            let resultsView = segue.destinationViewController as! ResultsViewController
+            //probably should have some counter that keeps an index of the current invitee
+            resultsView.searchItems = self.searchItems
+        }
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SBGestureTableViewCell
