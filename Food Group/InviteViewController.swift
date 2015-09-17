@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import JVFloatLabeledTextField
-import PureLayout
 
  class InviteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchBarDelegate{
  
     
-    @IBOutlet weak var eventTitleTextField: JVFloatLabeledTextField!
+    @IBOutlet weak var eventTitleTextField: UITextField!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,14 +22,6 @@ import PureLayout
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        eventTitleTextField.delegate = self
-
-        eventTitleTextField.setPlaceholder("Event title here", floatingTitle: "Event title")
-        eventTitleTextField.borderStyle = UITextBorderStyle.None
-        eventTitleTextField.textColor = UIColor.blackColor()
-        eventTitleTextField.backgroundColor = UIColor.orangeColor()
-        self.view.addSubview(eventTitleTextField)
         
         searchBar.returnKeyType = .Next
     }
