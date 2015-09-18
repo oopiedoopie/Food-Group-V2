@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
  class InviteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchBarDelegate{
  
@@ -26,6 +27,10 @@ import UIKit
         searchBar.returnKeyType = .Next
     }
     
+    override func viewDidAppear(animated: Bool) {
+        SVProgressHUD.showInfoWithStatus("Add friends to group")
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
@@ -42,6 +47,10 @@ import UIKit
         searchBar.text = ""
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        searchBar.resignFirstResponder()
+        eventTitleTextField.resignFirstResponder()
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
@@ -56,6 +65,7 @@ import UIKit
     }
   
  
+
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

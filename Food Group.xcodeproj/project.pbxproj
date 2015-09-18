@@ -304,7 +304,13 @@
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 27XXJG8HK4;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
