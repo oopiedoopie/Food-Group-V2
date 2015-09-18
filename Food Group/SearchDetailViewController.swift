@@ -14,6 +14,7 @@ class SearchDetailViewController: UIViewController {
     
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var addLocationLabel: UILabel!
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var addressLable: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -30,6 +31,11 @@ class SearchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        if(searchItems.count > 0){
+            addLocationLabel.text = String(self.searchItems[0].inviteeName!) + ", add this location?"
+        }
+        
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
@@ -95,8 +101,15 @@ class SearchDetailViewController: UIViewController {
 
     }
     
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func urlButtonPressed(sender: AnyObject) {
     }
+    
+    
     
     deinit{
         print("Detail view was deinit")

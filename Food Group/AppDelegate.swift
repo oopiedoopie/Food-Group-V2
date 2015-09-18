@@ -24,13 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         Parse.setApplicationId("nwfq7dvweeLwaPtjdXaJbeHn9Izsh1tUwzCxsWI5", clientKey: "ubTyayOWL4bVAAKQMyI6hpndcRORNZkJFztM2Hcl")
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
-        
+    
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
-      
-        
-        
         // Register for Push Notitications
+        
         if application.applicationState != UIApplicationState.Background {
             // Track an app open here if we launch with a push, unless
             // "content_available" was used to trigger a background push (introduced in iOS 7).
@@ -55,8 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
-    
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()

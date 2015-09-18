@@ -39,6 +39,7 @@
 		A1D214681B7BD9DE00374F70 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D214671B7BD9DE00374F70 /* OpenGLES.framework */; };
 		A1D2146A1B7BD9E500374F70 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D214691B7BD9E500374F70 /* SystemConfiguration.framework */; };
 		A1ECEC041B7B9C930024F2FA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ECEC031B7B9C930024F2FA /* SearchViewController.swift */; };
+		A1EF22D91BABB17C004F1DC4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF22D81BABB17C004F1DC4 /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		A1D214671B7BD9DE00374F70 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A1D214691B7BD9E500374F70 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A1ECEC031B7B9C930024F2FA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A1EF22D81BABB17C004F1DC4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A2B41F8EC3D72AAC079D0276 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE04E7E9BCF9528EE9072A1C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FF13F9DDBFD7AA490ADCE374 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				A1ECEC031B7B9C930024F2FA /* SearchViewController.swift */,
 				A1CAC1CB1B83E8690064232A /* SearchDetailViewController.swift */,
 				A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */,
+				A1EF22D81BABB17C004F1DC4 /* RegisterViewController.swift */,
 				A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */,
 				A1C5E02D1B6D77810094FE41 /* LogInViewController.swift */,
 				A1C5E02F1B6D77810094FE41 /* Main.storyboard */,
@@ -424,6 +427,7 @@
 				A119FD3B1B852D80001875E3 /* UIColorExtension.swift in Sources */,
 				A1372EA71B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift in Sources */,
 				A1372EA51B6D7E8300669CC9 /* SBGestureTableViewCell.swift in Sources */,
+				A1EF22D91BABB17C004F1DC4 /* RegisterViewController.swift in Sources */,
 				A119FD391B852912001875E3 /* FGButton.swift in Sources */,
 				A1372EA91B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift in Sources */,
 				A1372EAC1B6D7F8100669CC9 /* VoteViewController.swift in Sources */,
