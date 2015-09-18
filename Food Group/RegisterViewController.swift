@@ -10,9 +10,7 @@ import UIKit
 import Parse
 import SVProgressHUD
 
-class RegisterViewController: UITableViewController, UITextFieldDelegate {
-    
-    let swipeRec = UISwipeGestureRecognizer()
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
@@ -25,14 +23,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.emailField.delegate = self
         self.passwordField.delegate = self
         self.passwordField.secureTextEntry = true
-        swipeRec.addTarget(self, action: "swipeToPopView")
-        self.view.addGestureRecognizer(swipeRec)
-        
-        //test to change UITextField's placeholder font color
-        let bgTextColor : UIColor = UIColor(rgba: "#8000FF")
-        nameField.attributedPlaceholder = NSAttributedString(string:nameField.placeholder!,attributes: [NSForegroundColorAttributeName: bgTextColor])
-        passwordField.attributedPlaceholder = NSAttributedString(string:passwordField.placeholder!,attributes: [NSForegroundColorAttributeName: bgTextColor])
-        emailField.attributedPlaceholder = NSAttributedString(string:emailField.placeholder!,attributes: [NSForegroundColorAttributeName: bgTextColor])
+    
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -104,4 +95,4 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             }
         }
     }//ends func register
-    
+

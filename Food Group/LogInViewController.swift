@@ -14,7 +14,7 @@ import ParseFacebookUtilsV4
 import FBSDKCoreKit
 import ParseUI
 
-class LogInViewController: PFLogInViewController, PFLogInViewControllerDelegate {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Outlets
     @IBOutlet var emailField: UITextField!
@@ -49,7 +49,9 @@ class LogInViewController: PFLogInViewController, PFLogInViewControllerDelegate 
         self.view.endEditing(true)
     }
     
-    override func textFieldShouldReturn(textField: UITextField) -> Bool {
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == self.emailField {
             self.passwordField.becomeFirstResponder()
         } else if textField == self.passwordField {
