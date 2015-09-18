@@ -9,4 +9,6 @@
 #import <DRCellSlideGestureRecognizer/DRCellSlideGestureRecognizer.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <ParseUI/ParseUI.h>
+
  

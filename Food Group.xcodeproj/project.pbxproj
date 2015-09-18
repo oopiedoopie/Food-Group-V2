@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5260F6E58FA91AB4B3D64346 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B41F8EC3D72AAC079D0276 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A10B08921BABCD4B00E01EDA /* LoginCheckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10B08911BABCD4B00E01EDA /* LoginCheckController.swift */; settings = {ASSET_TAGS = (); }; };
 		A119FD391B852912001875E3 /* FGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD381B852912001875E3 /* FGButton.swift */; };
 		A119FD3B1B852D80001875E3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD3A1B852D80001875E3 /* UIColorExtension.swift */; };
 		A119FD3D1B852FE5001875E3 /* FGViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119FD3C1B852FE5001875E3 /* FGViewStyle.swift */; };
@@ -16,10 +17,14 @@
 		A1372EA71B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1372EA61B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift */; };
 		A1372EA91B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1372EA81B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift */; };
 		A1372EAC1B6D7F8100669CC9 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */; };
+		A1521D571BAC66BE002E568A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1521D561BAC66BE002E568A /* Utilities.swift */; settings = {ASSET_TAGS = (); }; };
+		A1521D591BAC66DE002E568A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1521D581BAC66DE002E568A /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		A1521D5B1BAC6779002E568A /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1521D5A1BAC6779002E568A /* PushNotification.swift */; settings = {ASSET_TAGS = (); }; };
 		A16AB6DE1B89166C00D7F5EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16AB6DD1B89166C00D7F5EF /* MapKit.framework */; };
 		A16AB6E01B891D7800D7F5EF /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB6DF1B891D7800D7F5EF /* VoteItem.swift */; };
 		A173EB671B84DB14003CA8E7 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */; };
 		A19197F51B7B910300E2C84E /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19197F41B7B910300E2C84E /* InviteViewController.swift */; };
+		A1B0F12E1BAC6F590020D805 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B0F12D1BAC6F590020D805 /* Images.swift */; settings = {ASSET_TAGS = (); }; };
 		A1C5E02C1B6D77810094FE41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5E02B1B6D77810094FE41 /* AppDelegate.swift */; };
 		A1C5E02E1B6D77810094FE41 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5E02D1B6D77810094FE41 /* LogInViewController.swift */; };
 		A1C5E0311B6D77810094FE41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C5E02F1B6D77810094FE41 /* Main.storyboard */; };
@@ -53,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A10B08911BABCD4B00E01EDA /* LoginCheckController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCheckController.swift; sourceTree = "<group>"; };
 		A119FD381B852912001875E3 /* FGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGButton.swift; sourceTree = "<group>"; };
 		A119FD3A1B852D80001875E3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A119FD3C1B852FE5001875E3 /* FGViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGViewStyle.swift; sourceTree = "<group>"; };
@@ -61,11 +67,15 @@
 		A1372EA61B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellAction.swift; sourceTree = "<group>"; };
 		A1372EA81B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellSideView.swift; sourceTree = "<group>"; };
 		A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
+		A1521D561BAC66BE002E568A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		A1521D581BAC66DE002E568A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A1521D5A1BAC6779002E568A /* PushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		A16AB6DD1B89166C00D7F5EF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A16AB6DF1B891D7800D7F5EF /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
 		A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		A181407E1B6D792E0089D6FF /* Food Group-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Food Group-Bridging-Header.h"; sourceTree = "<group>"; };
 		A19197F41B7B910300E2C84E /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
+		A1B0F12D1BAC6F590020D805 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		A1C5E0261B6D77810094FE41 /* Food Group.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Group.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C5E02A1B6D77810094FE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1C5E02B1B6D77810094FE41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +179,10 @@
 			children = (
 				A119FD3A1B852D80001875E3 /* UIColorExtension.swift */,
 				A16AB6DF1B891D7800D7F5EF /* VoteItem.swift */,
+				A1521D561BAC66BE002E568A /* Utilities.swift */,
+				A1521D581BAC66DE002E568A /* Constants.swift */,
+				A1521D5A1BAC6779002E568A /* PushNotification.swift */,
+				A1B0F12D1BAC6F590020D805 /* Images.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -216,6 +230,7 @@
 				A1372EAB1B6D7F8100669CC9 /* VoteViewController.swift */,
 				A1EF22D81BABB17C004F1DC4 /* RegisterViewController.swift */,
 				A173EB661B84DB14003CA8E7 /* ResultsViewController.swift */,
+				A10B08911BABCD4B00E01EDA /* LoginCheckController.swift */,
 				A1C5E02D1B6D77810094FE41 /* LogInViewController.swift */,
 				A1C5E02F1B6D77810094FE41 /* Main.storyboard */,
 				A1C5E0321B6D77810094FE41 /* Images.xcassets */,
@@ -417,17 +432,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A173EB671B84DB14003CA8E7 /* ResultsViewController.swift in Sources */,
+				A1521D591BAC66DE002E568A /* Constants.swift in Sources */,
 				A119FD3D1B852FE5001875E3 /* FGViewStyle.swift in Sources */,
 				A1ECEC041B7B9C930024F2FA /* SearchViewController.swift in Sources */,
 				A19197F51B7B910300E2C84E /* InviteViewController.swift in Sources */,
 				A1C5E02E1B6D77810094FE41 /* LogInViewController.swift in Sources */,
 				A1CAC1CC1B83E8690064232A /* SearchDetailViewController.swift in Sources */,
+				A1B0F12E1BAC6F590020D805 /* Images.swift in Sources */,
+				A1521D571BAC66BE002E568A /* Utilities.swift in Sources */,
 				A16AB6E01B891D7800D7F5EF /* VoteItem.swift in Sources */,
 				A1C5E02C1B6D77810094FE41 /* AppDelegate.swift in Sources */,
 				A119FD3B1B852D80001875E3 /* UIColorExtension.swift in Sources */,
 				A1372EA71B6D7E9500669CC9 /* SBGestureTableViewCellAction.swift in Sources */,
+				A1521D5B1BAC6779002E568A /* PushNotification.swift in Sources */,
 				A1372EA51B6D7E8300669CC9 /* SBGestureTableViewCell.swift in Sources */,
 				A1EF22D91BABB17C004F1DC4 /* RegisterViewController.swift in Sources */,
+				A10B08921BABCD4B00E01EDA /* LoginCheckController.swift in Sources */,
 				A119FD391B852912001875E3 /* FGButton.swift in Sources */,
 				A1372EA91B6D7EA700669CC9 /* SBGestureTableViewCellSideView.swift in Sources */,
 				A1372EAC1B6D7F8100669CC9 /* VoteViewController.swift in Sources */,

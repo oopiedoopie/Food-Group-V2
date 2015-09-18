@@ -59,10 +59,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/FBSDKCoreKit.framework'
   install_framework 'Pods/FBSDKLoginKit.framework'
   install_framework 'Pods/FontAwesome_swift.framework'
-  install_framework 'Pods/JVFloatLabeledTextField.framework'
   install_framework 'Pods/PNChart.framework'
   install_framework 'Pods/Parse.framework'
   install_framework 'Pods/ParseFacebookUtilsV4.framework'
+  install_framework 'Pods/ParseUI.framework'
   install_framework 'Pods/SVProgressHUD.framework'
   install_framework 'Pods/UICountingLabel.framework'
 fi
@@ -74,10 +74,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/FBSDKCoreKit.framework'
   install_framework 'Pods/FBSDKLoginKit.framework'
   install_framework 'Pods/FontAwesome_swift.framework'
-  install_framework 'Pods/JVFloatLabeledTextField.framework'
   install_framework 'Pods/PNChart.framework'
   install_framework 'Pods/Parse.framework'
   install_framework 'Pods/ParseFacebookUtilsV4.framework'
+  install_framework 'Pods/ParseUI.framework'
   install_framework 'Pods/SVProgressHUD.framework'
   install_framework 'Pods/UICountingLabel.framework'
 fi
