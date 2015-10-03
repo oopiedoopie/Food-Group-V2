@@ -76,7 +76,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         SVProgressHUD.showInfoWithStatus("Please wait...")
         
-        var user = PFUser()
+        let user = PFUser()
         user.username = email
         user.password = password
         user.email = email

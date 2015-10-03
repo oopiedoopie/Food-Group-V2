@@ -70,7 +70,7 @@ import SVProgressHUD
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         eventTitleTextField.resignFirstResponder()
-        return true;
+        return true
     }
     
     @IBAction func inviteButtonPressed(sender: AnyObject) {
